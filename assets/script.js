@@ -5,3 +5,11 @@
 // event entered should save to local storage
 // when page is refreshed saved events persist
 
+// universal variables
+var currentDay = $('#currentDay');
+
+
+// moment.js for current date
+var today = moment();
+currentDay.text(today.format("dddd, MMMM Do YYYY"));
+currentDay.append(today);
