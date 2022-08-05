@@ -12,4 +12,8 @@ var currentDay = $('#currentDay');
 // moment.js for current date
 var today = moment();
 currentDay.text(today.format("dddd, MMMM Do YYYY"));
-currentDay.append(today);
+
+$('.btn').on('click', function(event) {
+    console.log($(this).parent('.input-group-append').parent('.input-group').attr('id'))
+    console.log($(this).parent().siblings('.form-control').val())
+})
