@@ -1,19 +1,39 @@
-// Add in current date at top with moments js
 // color code time blocks (gray = past; red = current; green = future;)
-// add event listener on click to time block divs
-    // once clicked you can enter an event per block
-// event entered should save to local storage
 // when page is refreshed saved events persist
 
 // universal variables
 var currentDay = $('#currentDay');
-
+var today = moment();
+var green = {'background-color': '#E0F1C2'}; // add .past or .future with the color and use in if else statement (.$(.future()).css(green))
+var red = {'background-color': '#F39F9F'};
+var gray = {'background-color': '#E0E0E0'};
 
 // moment.js for current date
-var today = moment();
 currentDay.text(today.format("dddd, MMMM Do YYYY"));
 
-$('.btn').on('click', function(event) {
-    console.log($(this).parent('.input-group-append').parent('.input-group').attr('id'))
-    console.log($(this).parent().siblings('.form-control').val())
+// add event listener on click to save buttons
+    // once clicked should save to local storage
+$(document).ready(function() {
+    $('.btn').on('click', function(event) {
+        var taskHour = $(this).parent('.input-group-append').parent('.input-group').attr('id');
+        var task = $(this).parent().siblings('.form-control').val();
+
+    localStorage.setItem(taskHour,task)
+    })
+
+    // colors blocks based on current hour
+    var time = today.hour(9-17);
+    console.log(time);
+
+
 })
+
+
+
+
+
+
+
+
+
+
