@@ -1,7 +1,18 @@
+/* added root variables */
+:root {
+  --plum: rgb(87, 65, 87);
+  --lav: rgb(147, 132, 161);
+  --yel: rgb(238, 208, 133);
+  --dove: rgb(31, 31, 34);
+  --shadow: 1px 0px 3px 2px var(--plum);
+}
+
+/* changed background-color */
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  background-color: var(--lav);
 }
 
 textarea {
@@ -13,18 +24,33 @@ textarea {
   padding: 10px;
 }
 
+/* changed color styling to match */
 .jumbotron {
   text-align: center;
-  background-color: transparent;
-  color: black;
+  background-color: var(--plum);
+  color: white;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 10px solid var(--dove);
 }
 
-/* Makes all time-boxes same size */
+/* makes all rows having same padding */
+.input-group {
+  padding: 1rem;
+}
+
+/* makes all time-boxes same size, box shadow to mimic notebook tabs */
 .input-group-text {
   width: 100px;
+  background-color: var(--plum);
+  color: white;
   box-sizing: border-box;
+  border: .01rem dashed white; 
+  box-shadow: var(--shadow);
+}
+
+/* adds border around text box */
+.form-control {
+  border: .01rem solid var(--dove);
 }
 
 .description {
@@ -42,15 +68,10 @@ textarea {
   border-top: 1px solid white;
 }
 
-.hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
-}
-
+/* changed past color to black */
 .past {
   background-color: #d3d3d3;
-  color: white;
+  color: var(--plum);
 }
 
 .present {
@@ -59,19 +80,20 @@ textarea {
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: #64ba64;
   color: white;
 }
 
-.saveBtn {
-  border-left: 1px solid black;
+/* changed class name to match */
+.btn {
+  border: .01rem solid var(--dove);
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06aed5;
+  background-color: var(--yel);
   color: white;
 }
 
-.saveBtn i:hover {
+.btn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
