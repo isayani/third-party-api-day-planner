@@ -30,6 +30,9 @@ $(document).ready(function() {
                 $('#'+time).removeClass("future");
                 $('#'+time).removeClass("present");
                 $('#'+time).addClass("past");
+                // removes save capability after hour has passed
+                // $(this).children('.input-group-append').children().prop('disabled',true);
+
             } else if (time === currentHour) {
                 $('#'+time).removeClass("past");
                 $('#'+time).removeClass("future");
